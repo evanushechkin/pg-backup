@@ -1,0 +1,17 @@
+LogFile: "/var/log/pg_basebackup.log"
+DocCommand: "docker exec pgsql96.snap su postgres -c "
+PgCommand: "pg_basebackup -x -P -R -Ft -z -Z 4 -v -h local  -U rep -D "
+RsyncCommand: "rsync --bwlimit=4500 -avP -e "
+Path:
+  BackupDir: "/var/backups/postgresql/pgbasebackup/"
+  DocBackupDir: "/var/backups/pgbasebackup/"
+BackUpServer:
+  RemoteServer: "192.168.0.1"
+  RemotePort: "22"
+  RemoteUser: "backup"
+  RemotePath: "/mnt/data1/backup/postgresql/mts/pgbasebackup/"
+ShedulePlan:
+  shPlan: "time" # План запуска в определенное время time, раз в определнное колличество часов - hour, раз в определнное колличество минут - minute
+  shTime: "6:00" # Запуск в определенное время
+  shHour: "1" # Запуск раз в определенное колличество часов
+  shMinute: "30" # Запуск раз в определенное колличество минут
