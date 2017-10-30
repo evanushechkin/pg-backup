@@ -9,7 +9,7 @@ BackUpServer:
   RemoteServer: "192.168.0.1"
   RemotePort: "22"
   RemoteUser: "backup"
-  RemotePath: "/mnt/data1/backup/postgresql/mts/pgbasebackup/"
+  RemotePath: "/mnt/data1/backup/postgresql/pgbasebackup/"
 ShedulePlan:
   shPlan: "time" # План запуска в определенное время time, раз в определнное колличество часов - hour, раз в определнное колличество минут - minute
   shTime: "6:00" # Запуск в определенное время
